@@ -1,17 +1,30 @@
-const express = require('express');
+import express from "express";
 const app = express();
-const bodyParser = require('body-parser');
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
-const adapter = new FileSync('db.json');
-db = low(adapter);
-db.defaults({ users: [] }).write();
+
+import { Low, JSONFile  } from 'lowdb';
+
+const adapter = new JSONFile("db.json")
+const db = new Low(adapter)
+
+
+// Read data from JSON file, this will set db.data content
+await db.read()
+
+// db.defaults({ users: [] }).write();
+
+db.data ||= { users: [] } 
+
+// save data to file
+await db.write();
+
+
 const port = 3000;
 
 app.set('view engine', 'pug');
 app.set('views', './views');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 
 app.get('/', function (req, res) {
@@ -42,6 +55,7 @@ app.post('/users/create', function (req, res) {
 	users.push(req.body);
 	res.redirect('/users');
 })
+
 app.listen(port, function () {
 	console.log('Server listening on port ' + port);
 });
