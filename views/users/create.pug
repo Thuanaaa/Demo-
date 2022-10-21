@@ -1,7 +1,9 @@
-h1 Create
-form(action="/users/create", method="POST")
-	label ID 
-	input(type="number", name="id")
-	label Name
-	input(name="name",type="text")
-	button Create
+extends ../layouts/common
+block content
+	h1(style="text-align:center") CREATE
+	form(action="/users/create", method="POST" class="d-flex")
+		label ID 
+		input(type="number", name="id" class="form-control" )
+		label Name
+		input(type="text",name="name" class="form-control")
+		button Create
