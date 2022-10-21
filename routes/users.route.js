@@ -32,6 +32,7 @@ router.get('/:id', function (req, res) {
 });
 
 router.post('/create', function (req, res) {
+    req.body.id = parseInt(req.body.id);
     db.data.users.push(req.body);
     db.write();
     res.redirect('/users');
