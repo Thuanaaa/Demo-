@@ -1,13 +1,21 @@
-h1 Users
-a(href="/users/create") Create
-form(action="/users/search", method="GET")
-	input(type="text", name="q")
-	button Search
-ul
-	each user in users
-		li
-			span=user.name
-			span &nbsp;
-			a(href="/users/"+user.id) View 
+extends ../layouts/common
+block content
+	h1(style="text-align:center") USERS
+	.d-flex.align-items-center
+		a(class="btn btn-primary", href="/users/create") Create
+		form.ml-auto.mb-2.mb-lg-0(action="/users/search", method="GET" class="d-flex")
+			input(type="text", name="q", class="form-control")
+			button(class="btn btn-primary ") Search
+	table.table
+		tr
+			th Name 
+			th ID
+			th Action
+		each user in users
+			tr
+				td=user.name
+				td=user.id
+				td
+					a(href="/users/"+user.id) View 
 
 

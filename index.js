@@ -1,7 +1,5 @@
 import express from 'express';
-import _ from 'lodash';
 import db from './db.js';
-
 import userRoutes from './routes/users.route.js';
 
 const app = express();
@@ -12,7 +10,7 @@ app.set('views', './views');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(express.static('public'));
 
 app.get('/', function (req, res) {
 	res.render('index');
