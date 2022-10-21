@@ -10,4 +10,4 @@ db.data ||= { users: [] }
 // save data to file
 await db.write();
 
-module.exports = db;
+export default db;

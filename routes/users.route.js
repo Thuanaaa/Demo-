@@ -1,6 +1,6 @@
 import express from 'express';
 import _ from 'lodash';
-import db from '../db';
+import db from '../db.js';
 
 const router = express.Router();
 
@@ -37,5 +37,5 @@ router.post('/create', function (req, res) {
     res.redirect('/users');
 });
 
-module.exports = router;
+export default router;
 

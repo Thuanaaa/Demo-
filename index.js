@@ -1,8 +1,9 @@
 import express from 'express';
 import _ from 'lodash';
-import db from './db';
+import db from './db.js';
 
-const userRoutes = require('./routes/users.route');
+import userRoutes from './routes/users.route.js';
+
 const app = express();
 const port = 3000;
 
