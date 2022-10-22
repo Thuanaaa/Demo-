@@ -1,20 +1,20 @@
 extends ../layouts/common
 block content
-	h1(style="text-align:center") USERS
+	h1(style="text-align:center") LIST USERS
 	.d-flex.align-items-center
-		a(class="btn btn-primary", href="/users/create") Create
-		form.ml-auto.mb-2.mb-lg-0(action="/users/search", method="GET" class="d-flex")
-			input(type="text", name="q", class="form-control")
+		form.mb-2.mb-lg-0(action="/users/search", method="GET", class="d-flex")
+			input(type="text", name="q", class="form-control d-flex")
 			button(class="btn btn-primary ") Search
+		a(class="btn btn-primary", href="/users/create") Create
 	table.table
 		tr
 			th Name 
-			th ID
+			th Phone
 			th Action
 		each user in users
 			tr
 				td=user.name
-				td=user.id
+				td=user.phone
 				td
 					a(href="/users/"+user.id) View 
 

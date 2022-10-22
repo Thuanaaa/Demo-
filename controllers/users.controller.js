@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import db from '../db.js';
-
+import uniqid from 'uniqid'
+const uid = 1;
 function index(req, res) {
     res.render('users/index', {
         users: db.data.users
@@ -22,7 +23,7 @@ function create(req, res) {
 };
 
 function getID(req, res) {
-    var id = parseInt(req.params.id);
+    var id = req.params.id;
     var user = _.find(db.data.users, { id: id });
     res.render('users/views', {
         user: user,
@@ -30,7 +31,7 @@ function getID(req, res) {
 };
 
 function postCreate(req, res) {
-    req.body.id = parseInt(req.body.id);
+    req.body.id = uniqid();
     db.data.users.push(req.body);
     db.write();
     res.redirect('/users');

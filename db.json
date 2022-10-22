@@ -1,48 +1,20 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Thuan"
+      "name": "Minh Thuận",
+      "date": "2001-11-20",
+      "address": "Ấp 1 xã Tân Bửu",
+      "sex": "Nam",
+      "phone": "0123456789",
+      "id": "30iux61kl9jg6qoa"
     },
     {
-      "id": 2,
-      "name": "Tas"
-    },
-    {
-      "id": 3,
-      "name": "ddsa"
-    },
-    {
-      "id": 4,
-      "name": "Trung"
-    },
-    {
-      "id": 5,
-      "name": "Lai"
-    },
-    {
-      "id": 6,
-      "name": "Thanh Like"
-    },
-    {
-      "id": 7,
-      "name": "a"
-    },
-    {
-      "id": 8,
-      "name": "Hung"
-    },
-    {
-      "id": 9,
-      "name": "Tai"
-    },
-    {
-      "id": 10,
-      "name": "Doan Van Hau"
-    },
-    {
-      "id": "11",
-      "name": "Tu"
+      "name": "Mint Mẫn",
+      "date": "2002-01-21",
+      "address": "Ấp 1 xã Tân Bửu",
+      "sex": "Nữ",
+      "phone": "0123456789",
+      "id": "30iux61kl9jg7fym"
     }
   ]
 }

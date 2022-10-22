@@ -1,11 +1,29 @@
 extends ../layouts/common
 block content
-	h1 View users 
+	h1(style="text-align:center") Infomation
 	p 
-		b Id: 
-			span=user.id 
-			span &nbsp;
 		b Name: 
 			span &nbsp;
 			span=user.name
+			span &nbsp;
+			br
+		b Date of birth:
+			span &nbsp;
+			span=user.date
+			span &nbsp;
+			br
+		b Address: 
+			span &nbsp;
+			span=user.address
+			span &nbsp;	
+			br
+		b Sex: 
+			span &nbsp;
+			span=user.sex
+			span &nbsp;
+			br
+		b Phone: 
+			span &nbsp;
+			span=user.phone
+			span &nbsp;
 	
