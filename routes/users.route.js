@@ -2,7 +2,6 @@ import express from 'express';
 import _ from 'lodash';
 import controllers from '../controllers/users.controller.js';
 import requireCreate from '../validate/user.validate.js';
-import requireAuth from '../middleware/auth.middleware.js';
 const router = express.Router();
 router.get('/', controllers.index);
 router.get('/search', controllers.search);
