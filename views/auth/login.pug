@@ -1,0 +1,15 @@
+extends ../layouts/common
+block content
+	h1(style="text-align:center") LOGIN
+	if errors
+		each error in errors
+			.alert.alert-danger=error
+	form( method="POST",class="d-flex")
+		.form-group()
+			label(for="email") Email
+			input(type="text", name="email" class="form-control")
+		.form-group()
+			label(for="password") Password
+			input(type="password", name="password" class="form-control")
+
+		button(class="btn btn-primary") Login

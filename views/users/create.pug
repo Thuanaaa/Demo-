@@ -1,16 +1,15 @@
 extends ../layouts/common
 block content
 	h1(style="text-align:center") CREATE
+	if errors
+		each error in errors
+			.alert.alert-danger=error
 	form(action="/users/create", method="POST",class="d-flex")
 		.form-group()
 			label(for="name") Name
 			input(type="text", name="name" class="form-control")
-			label(for="date") Date of birth 
-			input(type="date", placeholder="dd-mm-yyyy", name="date", class="form-control")
-			label(for="address") Address
-			input(type="text", name="address" class="form-control")
-			label(for="sex") Sex
-			input(type="text", name="sex" class="form-control")
-			label(for="Phone") Phone 
+		.form-group()
+			label(for="phone") Phone
 			input(type="text", name="phone" class="form-control")
-			button(class="btn btn-primary") Create
+
+	button(class="btn btn-primary") Create

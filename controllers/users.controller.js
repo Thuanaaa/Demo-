@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import db from '../db.js';
-import uniqid from 'uniqid'
-const uid = 1;
+import uniqid from 'uniqid';
 function index(req, res) {
     res.render('users/index', {
         users: db.data.users
