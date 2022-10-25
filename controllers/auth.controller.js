@@ -3,7 +3,7 @@ import db from '../db.js';
 function login(req, res) {
     res.render('auth/login')
 };
-function postLogin(req, res) {
+function postLogin(req, res, next) {
     var email = req.body.email;
     var password = req.body.password;
     var user = _.find(db.data.users, { email: email });
@@ -25,7 +25,8 @@ function postLogin(req, res) {
         });
         return;
     }
-    res.cookie('userID', user.id);
+    res.cookie('userId', user.id);
     res.redirect('/users');
+    next();
 }
 export default { login, postLogin };

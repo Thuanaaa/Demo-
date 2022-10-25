@@ -18,9 +18,9 @@ app.get('/', function (req, res) {
 	res.render('index');
 });
 
-app.use('/users', requireAuth, userRoutes);
+app.use('/users', requireAuth ,userRoutes);
 app.use('/auth', authRoutes);
 
 app.listen(port, function () {
-	console.log('Server listening on port ' + port);
+	console.log('Server listening on ' + `http://localhost:${port}`);
 });

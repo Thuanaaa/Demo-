@@ -1,4 +1,5 @@
 import db from '../db.js';
+import _ from "lodash";
 function requireAuth(req, res, next) {
     if (!req.cookies.userId) {
         res.redirect('/auth/login');
