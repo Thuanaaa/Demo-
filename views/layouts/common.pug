@@ -12,7 +12,8 @@ html
                             a.nav-link(href="/users") 
                                 p(class="text-dark") Users list
                             
-                            
+        if (user)
+            p=user.name            
         .container                                         
             block content
             

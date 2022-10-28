@@ -7,6 +7,7 @@ await db.read();
 //db.defaults({ users: [] }).write();
 db.data ||= { users: [] }
 
+
 // save data to file
 await db.write();
 

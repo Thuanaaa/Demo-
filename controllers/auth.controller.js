@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import md5 from 'md5';
 import db from '../db.js';
 function login(req, res) {
     res.render('auth/login')
@@ -16,7 +17,8 @@ function postLogin(req, res, next) {
         });
         return;
     }
-    if (user.password !== password) {
+    var hashedpassword = md5(password);
+    if (user.password !== hashedpassword) {
         res.render('auth/login', {
             errors: [
                 'Wrong password.'
@@ -25,7 +27,9 @@ function postLogin(req, res, next) {
         });
         return;
     }
-    res.cookie('userId', user.id);
+    res.cookie('userId', user.id, {
+        signed: true
+    });
     res.redirect('/users');
     next();
 }
