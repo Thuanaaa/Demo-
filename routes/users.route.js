@@ -8,7 +8,8 @@ const router = express.Router();
 router.get('/', controllers.index);
 router.get('/search', controllers.search);
 router.get('/create', controllers.create);
-router.get('/:id', controllers.getID);
+router.get('/:id', controllers.getID);;
+router.get('/update', controllers.update)
 router.post('/create', upload.single('avatar'), requireCreate, controllers.postCreate);
 
 export default router;

@@ -20,6 +20,9 @@ function search(req, res) {
 function create(req, res) {
     res.render('users/create');
 };
+function update(req, res) {
+    res.render('users/update');
+};
 
 function getID(req, res) {
     var id = req.params.id;
@@ -37,7 +40,7 @@ function postCreate(req, res) {
     res.redirect('/users');
 };
 
-export default { index, search, create, getID, postCreate };
+export default { index, search, create, getID, postCreate, update };
 
 
 
