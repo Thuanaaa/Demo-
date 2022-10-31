@@ -5,7 +5,7 @@ function index(req, res) {
     var page = (req.query.page) || 1;
     var start = (page - 1) * perPage;
     var end = page * perPage;
-    var preV, next;
+    var preV = 0, next = 0;
     if (page > 1) {
         preV = page - 1;
         next = ++page;

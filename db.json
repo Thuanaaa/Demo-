@@ -2,21 +2,29 @@
   "users": [
     {
       "name": "Minh Thuận",
-      "date": "2001-11-20",
-      "address": "Ấp 1 xã Tân Bửu",
-      "sex": "Nam",
       "phone": "0123456789",
       "id": "30iux61kl9jg6qoa",
+      "avatar": "uploads\\ceabef4cd26db849028d3be86478faa6",
       "email": "thuan123@gmail.com",
       "password": "900150983cd24fb0d6963f7d28e17f72"
     },
     {
-      "name": "Mint Mẫn",
-      "date": "2002-01-21",
-      "address": "Ấp 1 xã Tân Bửu",
-      "sex": "Nữ",
-      "phone": "0123456789",
-      "id": "30iux61kl9jg7fym"
+      "name": "Hung",
+      "phone": "123",
+      "id": "30iux6awl9w7jpbi",
+      "avatar": "uploads\\ceabef4cd26db849028d3be86478faa6"
+    },
+    {
+      "name": "Trung",
+      "phone": "123",
+      "id": "30iuxa4gl9w7mf1b",
+      "avatar": "uploads\\ceabef4cd26db849028d3be86478faa6"
+    },
+    {
+      "name": "Hung",
+      "phone": "123",
+      "id": "30iuxxgl9w7oncl",
+      "avatar": "uploads\\e8be5e288a55138c12ed9a165a82c3a9"
     }
   ],
   "products": [
