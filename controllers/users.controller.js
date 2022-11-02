@@ -37,10 +37,20 @@ function postCreate(req, res) {
     req.body.avatar = req.file.path.split('\\').slice(1).join('\\');
     db.data.users.push(req.body);
     db.write();
-    res.redirect('/users');
+    res.redirect('/users')
 };
+function putUpdate(req, res) {
+    var getID = req.params.id;
+    var name = req.body.name;
+    var user = _.find(db.data.users, { id: getID });
+    if (user) {
+        db.data.users.name = name;
+    }
+    db.write();
+    res.redirect('/users');
+}
 
-export default { index, search, create, getID, postCreate, update };
+export default { index, search, create, getID, postCreate, putUpdate };
 
 
 
