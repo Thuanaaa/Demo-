@@ -8,8 +8,8 @@ const router = express.Router();
 router.get('/', controllers.index);
 router.get('/search', controllers.search);
 router.get('/create', controllers.create);
-router.get('/:id', controllers.getID);
-router.get('/:id/update', controllers.update)
+router.get('/getOne/:id', controllers.getID);
+// router.get('/:id/update', controllers.update)
 router.post('/create', upload.single('avatar'), requireCreate, controllers.postCreate);
 router.put('/update/:id', controllers.putUpdate);
 
