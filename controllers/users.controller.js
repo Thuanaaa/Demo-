@@ -18,10 +18,16 @@ function search(req, res) {
 };
 
 function create(req, res) {
+
     res.render('users/create');
 };
 function update(req, res) {
-    res.render('users/update');
+    var id = req.params.id;
+    var user = _.find(db.data.users, { id: id });
+
+    res.render('users/update', {
+        user: user,
+    });
 };
 
 function getID(req, res) {
@@ -41,16 +47,18 @@ function postCreate(req, res) {
 };
 function putUpdate(req, res) {
     var getID = req.params.id;
-    var name = req.body.name;
-    var user = _.find(db.data.users, { id: getID });
-    if (user) {
-        db.data.users.name = name;
+    var {name,phone, avatar } = req.body;
+    var userIndex = _.findIndex(db.data.users, { id: getID });
+    if (userIndex != -1) {
+        db.data.users[userIndex].name = name 
+        db.data.users[userIndex].phone = phone 
+        db.data.users[userIndex].avatar = req.file.path.split('\\').slice(1).join('\\')
     }
     db.write();
     res.redirect('/users');
 }
 
-export default { index, search, create, getID, postCreate, putUpdate };
+export default { index, search, create, getID, postCreate, putUpdate, update };
 
 
 
