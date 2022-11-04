@@ -3,7 +3,7 @@ block content
 	h1(style="text-align:center") LIST USERS
 	if(user)
 	.d-flex.align-items-center
-		form.mb-2.mb-lg-0(action="/users/search", method="GET", class="d-flex")
+		form.mb-2.mb-lg-0(action="/users/search/", method="GET", class="d-flex")
 			input(type="text", name="q", class="form-control d-flex")
 			button(class="btn btn-primary ") Search
 		a(class="btn btn-primary", href="/users/create") Create
@@ -20,9 +20,12 @@ block content
 				td=user.name
 				td=user.phone
 				td
-					a(href="/users/"+user.id) View 
+					a(href="/users/getOne/"+user.id) View 
 				td
 					a(href=`/users/update/${user.id}`) Update 
+				td
+				
+	
 	
 
 

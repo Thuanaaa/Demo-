@@ -4,6 +4,8 @@ import requireAuth from './middleware/auth.middleware.js';
 import authRoutes from './routes/auth.route.js'
 import userRoutes from './routes/users.route.js';
 import prodRoutes from './routes/prod.route.js';
+import cartRoute from './routes/cart.route.js';
+import sessionMiddleware from './middleware/session.middleware.js';
 
 //env
 import dotenv from 'dotenv'
@@ -23,8 +25,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
+
 //cookie_paser
 app.use(cookieParser(process.env.SESSION_SECRET));
+app.use(sessionMiddleware);
 
 app.get('/', function (req, res) {
 	res.render('index');
@@ -33,7 +37,7 @@ app.get('/', function (req, res) {
 app.use('/users', requireAuth, userRoutes);
 app.use('/auth', authRoutes);
 app.use('/prod', prodRoutes);
-
+app.use('/cart', cartRoute);
 app.listen(port, function () {
 	console.log('Server listening on ' + `http://localhost:${port}`);
 });

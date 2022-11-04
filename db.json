@@ -4,15 +4,15 @@
       "name": "Minh Thuận",
       "phone": "0123456789",
       "id": "30iux61kl9jg6qoa",
-      "avatar": "uploads\\ceabef4cd26db849028d3be86478faa6",
+      "avatar": "uploads\\828760e6d91f9d8e1a89160bac4667ec",
       "email": "thuan123@gmail.com",
       "password": "900150983cd24fb0d6963f7d28e17f72"
     },
     {
-      "name": "Hung",
+      "name": "Tào Tháo",
       "phone": "123",
       "id": "30iux6awl9w7jpbi",
-      "avatar": "uploads\\ceabef4cd26db849028d3be86478faa6",
+      "avatar": "uploads\\d9fb0dcedc189450ec22af9955f6c3b7",
       "email": "test123@gmail.com",
       "password": "202cb962ac59075b964b07152d234b70"
     },
@@ -21,12 +21,6 @@
       "phone": "123",
       "id": "30iuxa4gl9w7mf1b",
       "avatar": "uploads\\ceabef4cd26db849028d3be86478faa6"
-    },
-    {
-      "name": "Hung",
-      "phone": "123",
-      "id": "30iuxxgl9w7oncl",
-      "avatar": "uploads\\e8be5e288a55138c12ed9a165a82c3a9"
     }
   ],
   "products": [
@@ -130,5 +124,12 @@
       "name": "Ecolab - Hand Soap Form Antibac",
       "image": "/img/11.jpg"
     }
+  ],
+  "sessions": [
+    {
+      "id": "30iux4xsla213xge"
+    },
+    {},
+    {}
   ]
 }

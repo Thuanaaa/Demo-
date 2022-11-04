@@ -8,7 +8,7 @@ block content
                 img.card-img-top(src=product.image)
                 .card-body  
                     h5.card-title=product.name
-                    a.btn.btn-primary(href='#') Add to cart
+                    a.btn.btn-primary(href='/cart/add/'+product.id) Add to cart
     br
     nav(aria-label='Page navigation example')
         ul.pagination
