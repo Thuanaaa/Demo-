@@ -127,9 +127,10 @@
   ],
   "sessions": [
     {
-      "id": "30iux4xsla213xge"
-    },
-    {},
-    {}
+      "id": "4wjp5wdgsla25ski5",
+      "cart": {
+        "_1": 1
+      }
+    }
   ]
 }

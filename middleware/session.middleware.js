@@ -6,10 +6,10 @@ export default function (req, res, next) {
         res.cookie('sessionId', sessionId, {
             signed: true
         });
+        db.data.sessions.push({
+            id: sessionId
+        });
+        db.write();
     }
-    db.data.sessions.push({
-        id: sessionId
-    });
-    db.write();
     next();
 }

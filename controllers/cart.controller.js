@@ -10,9 +10,9 @@ function addToCard(req, res, next) {
         return;
     }
     //var count = _.find(db.data.sessions, { id: sessionId }).get('cart.' + productId, 0)
-    var cart = _.find(db.data.sessions, { id: sessionId })
-    if (cart) {
-        _.set(db.data.sessions[cart], `cart.${productId}`, 1);
+    var cart = _.findIndex(db.data.sessions, { id: sessionId })
+    if (cart != -1) {
+        _.set(db.data.sessions[cart], `cart._${productId}`, 1);
     }
     db.write();
     res.redirect('/prod');
