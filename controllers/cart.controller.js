@@ -14,6 +14,7 @@ function addToCard(req, res, next) {
     if (cart != -1) {
         _.set(db.data.sessions[cart], `cart._${productId}`, 1);
     }
+
     db.write();
     res.redirect('/prod');
 }

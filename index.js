@@ -1,11 +1,15 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
-import requireAuth from './middleware/auth.middleware.js';
 import authRoutes from './routes/auth.route.js'
 import userRoutes from './routes/users.route.js';
 import prodRoutes from './routes/prod.route.js';
 import cartRoute from './routes/cart.route.js';
+import transferRoute from './routes/transfer.route.js';
+import csurf from 'csurf';
+
 import sessionMiddleware from './middleware/session.middleware.js';
+import requireAuth from './middleware/auth.middleware.js';
+
 
 //env
 import dotenv from 'dotenv'
@@ -38,6 +42,7 @@ app.use('/users', requireAuth, userRoutes);
 app.use('/auth', authRoutes);
 app.use('/prod', prodRoutes);
 app.use('/cart', cartRoute);
+app.use('/transfer', csurf({ cookie: true }), requireAuth, transferRoute);
 app.listen(port, function () {
 	console.log('Server listening on ' + `http://localhost:${port}`);
 });

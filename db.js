@@ -4,7 +4,7 @@ const db = new Low(adapter);
 // Read data from JSON file, this will set db.data content
 await db.read();
 
-db.data ||= { users: [] }
+db.data ||= { users: [], transfers: [] }
 
 
 // save data to file
