@@ -1,5 +1,6 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
+import mongoose from 'mongoose';
 import authRoutes from './routes/auth.route.js'
 import userRoutes from './routes/users.route.js';
 import prodRoutes from './routes/prod.route.js';
@@ -20,6 +21,9 @@ const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.join(__dirname, '.env') });
 const app = express();
 const port = parseInt(process.env.PORT);
+
+//mongoose
+mongoose.connect(process.env.MONGO_URL);
 
 //PUG
 app.set('view engine', 'pug');
