@@ -20,7 +20,7 @@ import sessionMiddleware from './middleware/session.middleware.js';
 import requireAuth from './middleware/auth.middleware.js';
 
 //mongodb
-var url = "mongodb+srv://vominhthuan:thuan123Abc@cluster0.higrt8r.mongodb.net/?retryWrites=true&w=majority"
+var url = "mongodb+srv://vominhthuan:thuan123Abc@cluster0.higrt8r.mongodb.net/mydb?retryWrites=true&w=majority"
 const connectDB = async () => {
 	try {
 		mongoose.connect(
