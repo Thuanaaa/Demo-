@@ -1,18 +1,17 @@
 import _ from 'lodash';
-import db from '../db.js';
 import User from '../models/user.model.js';
 import uniqid from 'uniqid';
 
 async function index(req, res) {
-    var users = await User.find().exec();
+    var user = await User.find();
     res.render("users/index", {
-        users: users
+        users: user
     })
 };
 
 function search(req, res) {
     var q = req.query.q;
-    var matchedUsers = db.data.users.filter(function (user) {
+    var matchedUsers = User.find(function (user) {
         return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
     });
     res.render('users/index', {
